@@ -1,0 +1,22 @@
+<h3><a class="btn btn-secondary" href="/dept"><i class="fa fa-plus"></i> Create New</a> Department List</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+             <th>Department Id</th>
+            <th>Name</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.deptId}}</td>
+            <td>{{this.Name}}</td>
+            <td>
+                <a href="/dept/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/dept/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
